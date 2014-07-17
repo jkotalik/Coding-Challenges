@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Trees {
-	static boolean isBalanced(Node<String> n) {
-		return true;
+	public static boolean isBalanced(Node<String> n) {
+		return height(n) != -1;
 	}
 
+	private static int height(Node<String> n) {
+		return 0;
+	}
+
+
+	/*
+	 * Default Tree class
+	 */
 	public class Tree<T> {
 	    private final Node<T> root;
 
@@ -18,6 +26,9 @@ public class Trees {
 	    }
 	}
 
+	/*
+	 * Default Node class
+	 */
 	public class Node<T> {
 		private T data;
 		private Node<T> parent;
