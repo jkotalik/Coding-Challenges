@@ -1,6 +1,6 @@
 Coding-Challenges
 =========
-A list of difficult coding problems that can be solved in any programming language. These problems are divided into multiple categories, and each category has its own folder. Solutions to these problems can be found in src.
+A selection of difficult coding problems that can be solved in any programming language. These problems are divided into multiple categories, and each category has its own folder. Solutions to these problems can be found in src.
 
 To add your own soltions, simply fork this repo.
 
