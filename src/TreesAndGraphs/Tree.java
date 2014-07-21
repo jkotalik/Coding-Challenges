@@ -37,7 +37,7 @@ public class Tree {
 	/*
 	 * Default Node class
 	 */
-	public static class Node {
+	private static class Node {
 		private int data;
 		private Node left;
 		private Node right;
