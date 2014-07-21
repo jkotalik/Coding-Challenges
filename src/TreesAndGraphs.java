@@ -4,18 +4,17 @@ import java.util.Queue;
 import org.jgrapht.DirectedGraph;
 
 public class TreesAndGraphs {
-
-    /*
+	/*
      * Problem 1
      */
-	public static boolean isBalanced(Node root) {
+	static boolean isBalanced(Node root) {
 		if (root == null)
 			return false;
 		else
 			return height(root) != -1;
 	}
 
-	private static int height(Node n) {
+	static int height(Node n) {
 		if (n.left == null && n.right == null) {
 			return 1;
 		} else {
@@ -34,7 +33,7 @@ public class TreesAndGraphs {
 	/*
 	 * Problem 2
 	 */
-	public static boolean isDirectedRoute(Vertex start, Vertex end, DirectedGraph<Vertex, Edge> g) {
+	static boolean isDirectedRoute(Vertex start, Vertex end, DirectedGraph<Vertex, Edge> g) {
 		for (Vertex v : g.vertexSet())
 			v.visited = false;
 
@@ -45,6 +44,10 @@ public class TreesAndGraphs {
 			v = q.remove();
 			for (Edge e : g.outgoingEdgesOf(v)) {
 				Vertex v2 = e.v;
+				if (v2 == end)
+					return true;
+				else
+					q.add(v2);
 			}
 		}
 		return false;
@@ -53,20 +56,20 @@ public class TreesAndGraphs {
 	/*
 	 * Default Node class
 	 */
-	private static class Node {
-		private int data;
-		private Node left;
-		private Node right;
+	static class Node {
+		int data;
+		Node left;
+		Node right;
 	}
 
 	/*
 	 * Default Edge & Vertex classes
 	 */
-	private static class Vertex {
+	static class Vertex {
 		private boolean visited;
 	}
 
-	private static class Edge {
+	static class Edge {
 		private Vertex v;
 	}
 }
