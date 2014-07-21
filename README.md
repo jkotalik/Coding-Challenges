@@ -18,9 +18,9 @@ between two nodes.
 minimal height.
 
 4. Given a binary search tree, design an algorithm which creates a linked list of all the
-nodes at each depth (i.e., if you have a tree with depth D, you’ll have D linked lists).
+nodes at each depth (i.e., if you have a tree with depth D, you'll have D linked lists).
 
-5. Write an algorithm to find the ‘next’ node (i.e., in-order successor) of a given node in
+5. Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in
 a binary search tree where each node has a link to its parent.
 
 6. Design an algorithm and write code to find the first common ancestor of two nodes
@@ -31,5 +31,5 @@ necessarily a binary search tree.
 of nodes. Create an algorithm to decide if T2 is a subtree of T1.
 
 8. You are given a binary tree in which each node contains a value. Design an algorithm
-to print all paths which sum up to that value. Note that it can be any path in the tree
-- it does not have to start at the root.
+to print all paths which sum up to that value. Note that it can be any path in the tree -
+it does not have to start at the root.
