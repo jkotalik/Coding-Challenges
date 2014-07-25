@@ -8,14 +8,15 @@ To add your own soltions, simply fork this repo.
 1. Implement a function to check if a tree is balanced. For the purposes of this question,
 a balanced tree is defined to be a tree such that no two leaf nodes differ in distance
 from the root by more than one.  
-```boolean isBalanced(Node n)```
+```boolean isBalanced(TreeNode n)```
 
 2. Given a directed graph, design an algorithm to find out whether there is a route
 between two nodes.  
 ```boolean isDirectedRoute(Vertex start, Vertex end, Graph g)```
 
 3. Given a sorted (increasing order) array, write an algorithm to create a binary tree with
-minimal height.
+minimal height.  
+```TreeNode createMinimalBST(int[] arr)```
 
 4. Given a binary search tree, design an algorithm which creates a linked list of all the
 nodes at each depth (i.e., if you have a tree with depth D, you'll have D linked lists).
