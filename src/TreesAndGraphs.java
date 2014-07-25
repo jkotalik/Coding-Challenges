@@ -7,14 +7,14 @@ public class TreesAndGraphs {
 	/*
      * Problem 1
      */
-	static boolean isBalanced(Node root) {
+	static boolean isBalanced(TreeNode root) {
 		if (root == null)
 			return false;
 		else
 			return height(root) != -1;
 	}
 
-	static int height(Node n) {
+	static int height(TreeNode n) {
 		if (n.left == null && n.right == null) {
 			return 1;
 		} else {
@@ -54,16 +54,36 @@ public class TreesAndGraphs {
 	}
 
 	/*
-	 * Default Node class
+	 * Problem 3
 	 */
-	static class Node {
-		int data;
-		Node left;
-		Node right;
+	static TreeNode createMinimalBST(int[] arr) {
+		return createMinimalBSTHelper(arr, 0, arr.length-1);
+	}
+
+	static TreeNode createMinimalBSTHelper(int[] arr, int start, int end) {
+		if (start > end) {
+			return null;
+		} else {
+			int mid = (start + end) / 2;
+			TreeNode n = new TreeNode();
+			n.left = createMinimalBSTHelper(arr, start, mid-1);
+			n.right = createMinimalBSTHelper(arr, mid+1, end);
+			n.data = arr[mid];
+			return n;
+		}
 	}
 
 	/*
-	 * Default Edge & Vertex classes
+	 * Default Tree Structure
+	 */
+	static class TreeNode {
+		int data;
+		TreeNode left;
+		TreeNode right;
+	}
+
+	/*
+	 * Default Graph Structure
 	 */
 	static class Vertex {
 		private boolean visited;
