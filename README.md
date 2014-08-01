@@ -20,7 +20,7 @@ minimal height.
 
 4. Given a binary search tree, design an algorithm which creates a linked list of all the
 nodes at each depth (i.e., if you have a tree with depth D, you'll have D linked lists).  
-```ArrayList<LinkedList<TreeNode>> listTreeByDepth(TreeNode head)```
+```List<LinkedList<TreeNode>> listTreeByDepth(TreeNode head)```
 
 5. Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in
 a binary search tree where each node has a link to its parent.
