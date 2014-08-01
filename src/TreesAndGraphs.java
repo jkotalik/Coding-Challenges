@@ -33,7 +33,8 @@ public class TreesAndGraphs {
 	/*
 	 * Problem 2
 	 */
-	public static boolean isDirectedRoute(GraphNode start, GraphNode end, Graph<GraphNode, GraphNode> g) {
+	public static boolean isDirectedRoute(GraphNode start, GraphNode end,
+			Graph<GraphNode, GraphNode> g) {
 		for (GraphNode n : g.getNodes())
 			n.visited = false;
 
@@ -76,15 +77,24 @@ public class TreesAndGraphs {
 	/*
 	 * Problem 4
 	 */
-	public static List<LinkedList<TreeNode>> listTreeByDepth(TreeNode head) {
+	public static List<LinkedList<TreeNode>> listTreeByDepth(TreeNode root) {
 		List<LinkedList<TreeNode>> list = new ArrayList<LinkedList<TreeNode>>();
-		listTreeByDepthHelper(head, 0, list);
+		listTreeByDepthHelper(root, 0, list);
 		return list;
 	}
 
-	private static void listTreeByDepthHelper(TreeNode head, int i,
+	private static void listTreeByDepthHelper(TreeNode n, int level,
 			List<LinkedList<TreeNode>> list) {
-		// TODO Auto-generated method stub
+		if (n != null) {
+			LinkedList<TreeNode> ll = list.get(level);
+			if (ll == null) {
+				ll = new LinkedList<TreeNode>();
+				list.add(ll);
+			}
+			ll.add(n);
+			listTreeByDepthHelper(n.left, level + 1, list);
+			listTreeByDepthHelper(n.right, level + 1, list);
+		}
 
 	}
 
