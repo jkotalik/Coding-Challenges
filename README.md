@@ -2,7 +2,7 @@ Coding Challenges
 =========
 A selection of difficult coding problems that can be solved in any programming language. These problems are divided into multiple categories, and each category has its own folder. Solutions to these problems can be found in src.
 
-To add your own soltions, simply fork this repo.
+To add your own soltions, feel free to fork this repo.
 
 ## Trees and Graphs
 1. Implement a function to check if a tree is balanced. For the purposes of this question,
@@ -19,7 +19,8 @@ minimal height.
 ```TreeNode createMinimalBST(int[] arr)```
 
 4. Given a binary search tree, design an algorithm which creates a linked list of all the
-nodes at each depth (i.e., if you have a tree with depth D, you'll have D linked lists).
+nodes at each depth (i.e., if you have a tree with depth D, you'll have D linked lists).  
+```ArrayList<LinkedList<TreeNode>> listTreeByDepth(TreeNode head)```
 
 5. Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in
 a binary search tree where each node has a link to its parent.
