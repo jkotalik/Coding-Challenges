@@ -1,27 +1,27 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
-
-import org.jgrapht.DirectedGraph;
 
 public class TreesAndGraphs {
 	/*
-     * Problem 1
-     */
-	static boolean isBalanced(TreeNode root) {
+	 * Problem 1
+	 */
+	public static boolean isBalanced(TreeNode root) {
 		if (root == null)
 			return false;
 		else
-			return height(root) != -1;
+			return isBalancedHelper(root) != -1;
 	}
 
-	static int height(TreeNode n) {
+	private static int isBalancedHelper(TreeNode n) {
 		if (n.left == null && n.right == null) {
 			return 1;
 		} else {
 			int h_left = 0;
 			int h_right = 0;
-			if (n.left != null) h_left = height(n.left);
-			if (n.right != null) h_right = height(n.right);
+			if (n.left != null) h_left = isBalancedHelper(n.left);
+			if (n.right != null) h_right = isBalancedHelper(n.right);
 			if (h_left == -1 || h_right == -1 || Math.abs(h_left - h_right) > 1)
 				return -1;
 			else
@@ -33,17 +33,17 @@ public class TreesAndGraphs {
 	/*
 	 * Problem 2
 	 */
-	static boolean isDirectedRoute(Vertex start, Vertex end, DirectedGraph<Vertex, Edge> g) {
-		for (Vertex v : g.vertexSet())
-			v.visited = false;
+	public static boolean isDirectedRoute(GraphNode start, GraphNode end, Graph<GraphNode, GraphNode> g) {
+		for (GraphNode n : g.getNodes())
+			n.visited = false;
 
-		Vertex v;
-		Queue<Vertex> q = new LinkedList<Vertex>();
+		GraphNode v;
+		Queue<GraphNode> q = new LinkedList<GraphNode>();
 		q.add(start);
 		while(!q.isEmpty()) {
 			v = q.remove();
-			for (Edge e : g.outgoingEdgesOf(v)) {
-				Vertex v2 = e.v;
+			for (Pair<GraphNode, GraphNode> e : g.getEdges(v)) {
+				GraphNode v2 = e.getValue();
 				if (v2 == end)
 					return true;
 				else
@@ -56,11 +56,11 @@ public class TreesAndGraphs {
 	/*
 	 * Problem 3
 	 */
-	static TreeNode createMinimalBST(int[] arr) {
+	public static TreeNode createMinimalBST(int[] arr) {
 		return createMinimalBSTHelper(arr, 0, arr.length-1);
 	}
 
-	static TreeNode createMinimalBSTHelper(int[] arr, int start, int end) {
+	private static TreeNode createMinimalBSTHelper(int[] arr, int start, int end) {
 		if (start > end) {
 			return null;
 		} else {
@@ -74,22 +74,39 @@ public class TreesAndGraphs {
 	}
 
 	/*
-	 * Default Tree Structure
+	 * Problem 4
 	 */
-	static class TreeNode {
+	public static List<LinkedList<TreeNode>> listTreeByDepth(TreeNode head) {
+		List<LinkedList<TreeNode>> list = new ArrayList<LinkedList<TreeNode>>();
+		listTreeByDepthHelper(head, 0, list);
+		return list;
+	}
+
+	private static void listTreeByDepthHelper(TreeNode head, int i,
+			List<LinkedList<TreeNode>> list) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/*
+	 * Default Tree Node
+	 */
+	private static class TreeNode {
 		int data;
 		TreeNode left;
 		TreeNode right;
 	}
 
 	/*
-	 * Default Graph Structure
+	 * Default Graph Node
 	 */
-	static class Vertex {
+	private static class GraphNode implements Comparable<GraphNode> {
 		private boolean visited;
-	}
 
-	static class Edge {
-		private Vertex v;
+		@Override
+		public int compareTo(GraphNode o) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
 	}
 }
