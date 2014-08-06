@@ -1,8 +1,8 @@
 /*
  * Default Graph Node
  */
-private static class GraphNode implements Comparable<GraphNode> {
-	private boolean visited;
+public class GraphNode implements Comparable<GraphNode> {
+	public boolean visited;
 
 	@Override
 	public int compareTo(GraphNode o) {

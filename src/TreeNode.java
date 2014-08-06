@@ -2,7 +2,7 @@
  * Default Tree Node
  */
 public class TreeNode {
-	int data;
-	TreeNode left;
-	TreeNode right;
+	public int data;
+	public TreeNode left;
+	public TreeNode right;
 }
