@@ -99,6 +99,27 @@ public class TreesAndGraphs {
 	}
 
 	/*
+	 * Problem 5
+	 */
+	public static boolean isBinarySearchTree(TreeNode root) {
+		return isBinarySearchTreeHelper(root, null, null);
+	}
+
+	private static boolean isBinarySearchTreeHelper(TreeNode n, Integer min, Integer max) {
+		if (n == null) {
+			return true;
+		} else {
+			if ((min != null && n.data < min) || (max != null && n.data >= max)) {
+				return false;
+			} else {
+				return isBinarySearchTreeHelper(n.left, min, n.data) &&
+					   isBinarySearchTreeHelper(n.right, n.data, max);
+			}
+
+		}
+	}
+
+	/*
 	 * Default Tree Node
 	 */
 	private static class TreeNode {
