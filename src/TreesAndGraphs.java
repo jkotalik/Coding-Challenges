@@ -124,19 +124,21 @@ public class TreesAndGraphs {
 	 * Note: Can keep track of parent and child in last while loop instead of visited,
 	 * 		 same solution
 	 */
-	TreeNode nextInOrder(TreeNode n) {
+	public static TreeNode nextInOrder(TreeNode n) {
 		if (n == null) {
 			return null;
 		} else if (n.right != null) {
 			TreeNode n2 = n.right;
-			while (n2.left != null)
+			while (n2.left != null) {
 				n2 = n2.left;
+			}
 			n2.visited = true;
 			return n2;
 		} else {
 			TreeNode n2 = n.parent;
-			while (n2 != null && !n2.visited)
+			while (n2 != null && !n2.visited) {
 				n2 = n2.parent;
+			}
 			return n2;
 		}
 	}
