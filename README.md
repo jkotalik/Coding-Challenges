@@ -27,6 +27,7 @@ nodes at each depth (i.e., if you have a tree with depth D, you'll have D linked
 
 6. Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in
 a binary search tree where each node has a link to its parent.
+```TreeNode nextInOrder(TreeNode n)```
 
 7. Design an algorithm and write code to find the first common ancestor of two nodes
 in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
