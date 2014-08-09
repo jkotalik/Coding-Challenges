@@ -142,4 +142,43 @@ public class TreesAndGraphs {
 			return n2;
 		}
 	}
+
+	/*
+	 * Problem 7
+	 */
+	public static TreeNode ancestor(TreeNode c1, TreeNode c2, TreeNode root) {
+		if (!containsNode(c1, root) || !containsNode(c2, root))
+			return null;
+		return ancestorHelper(c1, c2, root);
+	}
+
+	private static boolean containsNode(TreeNode n, TreeNode root) {
+		if (n == null) {
+			return false;
+		} else if (n == root) {
+			return true;
+		} else {
+			return containsNode(n, root.left) || containsNode(n, root.right);
+		}
+	}
+
+	private static TreeNode ancestorHelper(TreeNode c1, TreeNode c2,
+			TreeNode root) {
+		if (root == null)
+			return null;
+
+		if (root == c1 || root == c2)
+			return root;
+
+		boolean con1 = containsNode(c1, root.left);
+		boolean con2 = containsNode(c2, root.left);
+
+		if (con1 && con2) {
+			return ancestorHelper(c1, c2, root.left);
+		} else if (con1) {
+			return root;
+		} else {
+			return ancestorHelper(c1, c2, root.right);
+		}
+	}
 }
