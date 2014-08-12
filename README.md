@@ -35,7 +35,8 @@ necessarily a binary search tree.
 ```TreeNode ancestor(TreeNode c1, TreeNode c2, TreeNode root)```
 
 8. You have two very large binary trees: T1, with millions of nodes, and T2, with hundreds
-of nodes. Create an algorithm to decide if T2 is a subtree of T1.
+of nodes. Create an algorithm to decide if T2 is a subtree of T1.  
+```boolean isSubtree(TreeNode t1, TreeNode t2)```
 
 9. You are given a binary tree in which each node contains a value. Design an algorithm
 to print all paths which sum up to that value. Note that it can be any path in the tree -
