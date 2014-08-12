@@ -4,6 +4,15 @@ A selection of difficult coding problems that can be solved in any programming l
 
 To add your own solutions, feel free to fork this repo.
 
+## Arrays and String
+1. 
+
+## Linked Lists
+1. 
+
+## Stacks and Queues
+1. 
+
 ## Trees and Graphs
 1. Implement a function to check if a tree is balanced. For the purposes of this question,
 a balanced tree is defined to be a tree such that no two leaf nodes differ in distance
@@ -41,3 +50,6 @@ of nodes. Create an algorithm to decide if T2 is a subtree of T1.
 9. You are given a binary tree in which each node contains a value. Design an algorithm
 to print all paths which sum up to that value. Note that it can be any path in the tree -
 it does not have to start at the root.
+
+## Misc
+1. 
