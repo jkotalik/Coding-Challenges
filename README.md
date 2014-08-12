@@ -1,8 +1,8 @@
 Coding Challenges
 =========
-A selection of difficult coding problems that can be solved in any programming language. These problems are divided into multiple categories, and each category has its own folder. Solutions to these problems can be found in src.
+A selection of difficult coding problems that can be solved in any programming language. The problems are divided into multiple categories, and each category has its own set of questions.
 
-To add your own solutions, feel free to fork this repo.
+To add your own solutions, feel free to fork this repo and create your own folder (LANGUAGE-NAME) under the root directory.
 
 ## Arrays and String
 1. 
